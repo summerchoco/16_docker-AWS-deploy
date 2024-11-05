@@ -6,7 +6,7 @@ import {
 } from '../modules/ReviewModule';
 
 export const callReviewDetailAPI = ({ reviewCode }) => {
-	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8080/api/v1/reviews/product/${reviewCode}`;
+	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8888/api/v1/reviews/product/${reviewCode}`;
 
 	return async (dispatch, getState) => {
 		const result = await fetch(requestURL, {
@@ -28,7 +28,7 @@ export const callReviewDetailAPI = ({ reviewCode }) => {
 export const callReviewWriteAPI = ({ form }) => {
 	console.log('[ReviewAPICalls] callReviewWriteAPI Call');
 
-	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8080/api/v1/reviews`;
+	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8888/api/v1/reviews`;
 
 	return async (dispatch, getState) => {
 		const result = await fetch(requestURL, {
@@ -56,7 +56,7 @@ export const callReviewWriteAPI = ({ form }) => {
 export const callReviewUpdateAPI = ({ form }) => {
 	console.log('[ReviewAPICalls] callReviewUpdateAPI Call');
 
-	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8080/api/v1/reviews`;
+	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8888/api/v1/reviews`;
 
 	return async (dispatch, getState) => {
 		const result = await fetch(requestURL, {
@@ -81,7 +81,7 @@ export const callReviewUpdateAPI = ({ form }) => {
 };
 
 export const callReviewsAPI = ({ productCode, currentPage }) => {
-	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8080/api/v1/reviews/${productCode}?offset=${currentPage}`;
+	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8888/api/v1/reviews/${productCode}?offset=${currentPage}`;
 
 	return async (dispatch, getState) => {
 		const result = await fetch(requestURL, {

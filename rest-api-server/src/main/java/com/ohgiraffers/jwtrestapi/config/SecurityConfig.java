@@ -112,7 +112,10 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
 
         // 허용할 도메인
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
+        configuration.setAllowedOrigins(Arrays.asList(
+                "http://localhost:3000",
+                "http://localhost:3333"
+        ));
         // 허용할 메서드
         configuration.setAllowedMethods(Arrays.asList("GET", "PUT", "POST", "DELETE"));
         // 허용할 헤더

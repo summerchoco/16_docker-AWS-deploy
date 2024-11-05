@@ -6,7 +6,8 @@ spring:
   # DB config
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/ohgi_restaurant
+    # Local Dev & Docker(Local) deploy
+    url: jdbc:mysql://database-server:3306/ohgi_restaurant
     username: ohgiraffers
     password: ohgiraffers
   # fileupload config
@@ -29,12 +30,21 @@ spring:
         use_sql_comments: true
 
 # static resource(image media file) config
-## ???? ??? ??, ?? ? ??? ??? ???(@Value)?? ??
+## 이미지를 저장할 위치와 응답할 때 이미지 주소 세팅
 image:
-  add-resource-locations: classpath:/static/productimgs/
+  # Local Dev
+#  add-resource-locations: classpath:/static/productimgs/
+#  add-resource-handler: /productimgs/**
+#  # Local Dev
+#  image-dir: src/main/resources/static/productimgs
+#  image-url: http://localhost:8080/productimgs/
+
+  # Docker(Local)
+  add-resource-locations: file:///springboot-app/productimgs/
   add-resource-handler: /productimgs/**
-  image-dir: src/main/resources/static/productimgs
-  image-url: http://localhost:8080/productimgs/
+  # Docker(Local)
+  image-dir: /springboot-app/productimgs
+  image-url: http://localhost:8888/productimgs/
 
 
 # security(jwt) config
