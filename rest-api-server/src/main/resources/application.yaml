@@ -6,7 +6,7 @@ spring:
   # DB config
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    # Local Dev & Docker(Local) deploy
+    # Local Dev & Docker(Local & AWS) deploy
     url: jdbc:mysql://database-server:3306/ohgi_restaurant
     username: ohgiraffers
     password: ohgiraffers
@@ -39,13 +39,19 @@ image:
 #  image-dir: src/main/resources/static/productimgs
 #  image-url: http://localhost:8080/productimgs/
 
-  # Docker(Local)
+#  # Docker(Local)
+#  add-resource-locations: file:///springboot-app/productimgs/
+#  add-resource-handler: /productimgs/**
+#  # Docker(Local)
+#  image-dir: /springboot-app/productimgs
+#  image-url: http://localhost:8888/productimgs/
+
+  # Docker(AWS)
   add-resource-locations: file:///springboot-app/productimgs/
   add-resource-handler: /productimgs/**
-  # Docker(Local)
+  # Docker(AWS)
   image-dir: /springboot-app/productimgs
-  image-url: http://localhost:8888/productimgs/
-
+  image-url: http://travel-buddy.me:8080/productimgs/
 
 # security(jwt) config
 jwt:

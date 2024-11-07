@@ -11,7 +11,7 @@ import {
 export const callSearchProductAPI = ({ search }) => {
 	console.log('[ProduceAPICalls] callSearchProductAPI Call');
 
-	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8888/api/v1/products/search?s=${search}`;
+	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8080/api/v1/products/search?s=${search}`;
 
 	return async (dispatch, getState) => {
 		const result = await fetch(requestURL, {
@@ -31,7 +31,7 @@ export const callSearchProductAPI = ({ search }) => {
 export const callProductRegistAPI = ({ form }) => {
 	console.log('[ProduceAPICalls] callProductRegistAPI Call');
 
-	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8888/api/v1/products`;
+	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8080/api/v1/products`;
 
 	return async (dispatch, getState) => {
 		const result = await fetch(requestURL, {
@@ -53,7 +53,7 @@ export const callProductRegistAPI = ({ form }) => {
 export const callProductUpdateAPI = ({ form }) => {
 	console.log('[ProduceAPICalls] callProductUpdateAPI Call');
 
-	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8888/api/v1/products`;
+	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8080/api/v1/products`;
 
 	return async (dispatch, getState) => {
 		const result = await fetch(requestURL, {
@@ -73,7 +73,7 @@ export const callProductUpdateAPI = ({ form }) => {
 };
 
 export const callProductDetailForAdminAPI = ({ productCode }) => {
-	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8888/api/v1/products-management/${productCode}`;
+	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8080/api/v1/products-management/${productCode}`;
 
 	return async (dispatch, getState) => {
 		const result = await fetch(requestURL, {
@@ -95,7 +95,7 @@ export const callProductDetailForAdminAPI = ({ productCode }) => {
 };
 
 export const callProductDetailAPI = ({ productCode }) => {
-	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8888/api/v1/products/${productCode}`;
+	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8080/api/v1/products/${productCode}`;
 
 	return async (dispatch, getState) => {
 		const result = await fetch(requestURL, {
@@ -118,9 +118,9 @@ export const callProductListForAdminAPI = ({ currentPage }) => {
 	let requestURL;
 
 	if (currentPage !== undefined || currentPage !== null) {
-		requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8888/api/v1/products-management?offset=${currentPage}`;
+		requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8080/api/v1/products-management?offset=${currentPage}`;
 	} else {
-		requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8888/api/v1/products-management`;
+		requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8080/api/v1/products-management`;
 	}
 
 	console.log('[ProduceAPICalls] requestURL : ', requestURL);
@@ -149,9 +149,9 @@ export const callProductListAPI = ({ currentPage }) => {
 	let requestURL;
 
 	if (currentPage !== undefined || currentPage !== null) {
-		requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8888/api/v1/products?offset=${currentPage}`;
+		requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8080/api/v1/products?offset=${currentPage}`;
 	} else {
-		requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8888/api/v1/products`;
+		requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8080/api/v1/products`;
 	}
 
 	console.log('[ProduceAPICalls] requestURL : ', requestURL);
@@ -172,7 +172,7 @@ export const callProductListAPI = ({ currentPage }) => {
 };
 
 export const callProductListAboutMealAPI = () => {
-	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8888/api/v1/products/meals`;
+	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8080/api/v1/products/meals`;
 
 	return async (dispatch, getState) => {
 		const result = await fetch(requestURL, {
@@ -193,7 +193,7 @@ export const callProductListAboutMealAPI = () => {
 };
 
 export const callProductListAboutDessertAPI = () => {
-	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8888/api/v1/products/dessert`;
+	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8080/api/v1/products/dessert`;
 
 	return async (dispatch, getState) => {
 		const result = await fetch(requestURL, {
@@ -214,7 +214,7 @@ export const callProductListAboutDessertAPI = () => {
 };
 
 export const callProductListAboutBeverageAPI = () => {
-	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8888/api/v1/products/beverage`;
+	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8080/api/v1/products/beverage`;
 
 	return async (dispatch, getState) => {
 		const result = await fetch(requestURL, {

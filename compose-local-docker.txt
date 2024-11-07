@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     container_name: my-react-app
     ports:
-      - "80:3000"
+      - "3333:3000"
 
   # Back-end : SpringBoot REST API Server
   backend-server:
@@ -19,9 +19,9 @@ services:
       SPRING_DATASOURCE_USERNAME: ohgiraffers
       SPRING_DATASOURCE_PASSWORD: ohgiraffers
     ports:
-      - "8080:8080"
+      - "8888:8080"
     volumes:
-      - ./static/productimgs:/springboot-app/productimgs
+      - C:\myWs\16_docker-AWS-deploy\rest-api-server\build\resources\main\static\productimgs:/springboot-app/productimgs
     depends_on:
       - database-server
 
@@ -36,7 +36,7 @@ services:
       MYSQL_PASSWORD: ohgiraffers
       TZ: Asia/Seoul
     ports:
-      - "3306:3306"
+      - "3366:3306"
     volumes:
       - mysql-data:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql

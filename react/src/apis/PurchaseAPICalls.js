@@ -1,7 +1,7 @@
 import { GET_PURCHASE, POST_PURCHASE } from '../modules/PurchaseModule';
 
 export const callPurchaseListAPI = ({ memberId }) => {
-	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8888/api/v1/purchase/${memberId}`;
+	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8080/api/v1/purchase/${memberId}`;
 
 	return async (dispatch, getState) => {
 		const result = await fetch(requestURL, {
@@ -21,7 +21,7 @@ export const callPurchaseListAPI = ({ memberId }) => {
 };
 
 export const callPurchaseAPI = ({ form }) => {
-	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8888/api/v1/purchase`;
+	const requestURL = `http://${process.env.REACT_APP_RESTAPI_IP}:8080/api/v1/purchase`;
 
 	return async (dispatch, getState) => {
 		const result = await fetch(requestURL, {
